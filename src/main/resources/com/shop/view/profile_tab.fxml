@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="14" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.shop.controller.ProfileController"
+      style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-width: 2px; -fx-border-radius: 10; -fx-background-radius: 10;">
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="Мои данные" style="-fx-text-fill: #F57F17; -fx-font-weight: bold;">
+        <font>
+            <Font size="16"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="Логин:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <TextField fx:id="loginField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="260"
+                   style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8; -fx-text-fill: #4E342E;"/>
+
+        <Label text="Название / имя:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <TextField fx:id="nameField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="260"
+                   style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+
+        <Label text="Телефон:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <TextField fx:id="phoneField" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="260"
+                   style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+
+        <Label text="Контактное лицо:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <TextField fx:id="contactField" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="260"
+                   style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+
+        <Label text="Адрес:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <TextField fx:id="addressField" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="260"
+                   style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+    </GridPane>
+
+    <Button text="Сохранить изменения" onAction="#onSaveProfile"
+            style="-fx-background-color: #FFD54F; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+
+    <Label fx:id="profileMessage" wrapText="true" style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+
+    <Separator style="-fx-background-color: #FFE082;"/>
+
+    <Label text="Изменить пароль" style="-fx-text-fill: #F57F17; -fx-font-weight: bold;">
+        <font>
+            <Font size="16"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="Текущий пароль:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <PasswordField fx:id="oldPasswordField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"
+                       style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+
+        <Label text="Новый пароль:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <PasswordField fx:id="newPasswordField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"
+                       style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+
+        <Label text="Повторите новый пароль:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+               style="-fx-text-fill: #4E342E; -fx-font-weight: bold;"/>
+        <PasswordField fx:id="confirmPasswordField" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"
+                       style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+
+        <Button text="Изменить пароль" onAction="#onChangePassword"
+                GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.rowSpan="3"
+                style="-fx-background-color: #FFE082; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 15; -fx-cursor: hand;"/>
+    </GridPane>
+
+    <Label text="Пароль: минимум 8 символов, цифра, заглавная буква, спецсимвол"
+           style="-fx-font-size: 11px; -fx-text-fill: #F9A825;" wrapText="true"/>
+
+    <Label fx:id="passwordMessage" wrapText="true" style="-fx-text-fill: #C62828; -fx-font-weight: bold;"/>
+</VBox>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.shop.controller.OrdersController"
+            style="-fx-background-color: #FFFDE7;">
+
+    <center>
+        <TableView fx:id="table" style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="40"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colProduct" text="Товар" prefWidth="160"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colDelivery" text="Доставка" prefWidth="140"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colQuantity" text="Кол-во" prefWidth="60"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colTotalPrice" text="Стоимость" prefWidth="120"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colCustomer" text="Заказчик" prefWidth="160"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colDate" text="Дата" prefWidth="140"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="8" style="-fx-padding: 15; -fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-width: 2 0 0 0; -fx-background-radius: 0 0 10 10;">
+            <Label text="Оформить новый заказ:" style="-fx-font-weight: bold; -fx-text-fill: #F57F17;">
+                <font>
+                    <Font size="14"/>
+                </font>
+            </Label>
+
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <ComboBox fx:id="productCombo" promptText="Товар" prefWidth="180"
+                          style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+                <ComboBox fx:id="deliveryCombo" promptText="Способ доставки" prefWidth="180"
+                          style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+                <TextField fx:id="quantityField" promptText="Количество" prefWidth="90"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <Button text="Оформить заказ" onAction="#onCreateOrder"
+                        style="-fx-background-color: #FFD54F; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <TextField fx:id="updateQuantityField" promptText="Новое количество для выбранного заказа" prefWidth="220"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <Button fx:id="updateButton" text="Изменить количество" onAction="#onUpdateQuantity"
+                        style="-fx-background-color: #FFE082; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button fx:id="deleteButton" text="Удалить / отменить заказ" onAction="#onDelete"
+                        style="-fx-background-color: #FFCC80; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button text="Обновить список" onAction="#onRefresh"
+                        style="-fx-background-color: #FFF176; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+
+            <Label fx:id="totalSumLabel" style="-fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-font-size: 14px;" wrapText="true"/>
+            <Label fx:id="errorLabel" style="-fx-text-fill: #C62828; -fx-font-weight: bold;" wrapText="true"/>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.shop.controller.CustomersController"
+            style="-fx-background-color: #FFFDE7;">
+
+    <center>
+        <TableView fx:id="table" style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="40"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colName" text="Название" prefWidth="150"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colPhone" text="Телефон" prefWidth="110"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colContact" text="Контактное лицо" prefWidth="140"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colAddress" text="Адрес" prefWidth="160"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colLogin" text="Логин" prefWidth="100"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colRole" text="Роль" prefWidth="100"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="8" style="-fx-padding: 15; -fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-width: 2 0 0 0; -fx-background-radius: 0 0 10 10;">
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <TextField fx:id="nameField" promptText="Название" prefWidth="140"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <TextField fx:id="phoneField" promptText="Телефон" prefWidth="110"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <TextField fx:id="contactField" promptText="Контактное лицо" prefWidth="140"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <TextField fx:id="addressField" promptText="Адрес" prefWidth="150"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+            </HBox>
+
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <TextField fx:id="loginField" promptText="Логин (только при создании)" prefWidth="160"
+                           style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <PasswordField fx:id="passwordField" promptText="Пароль (только при создании)" prefWidth="160"
+                               style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8;"/>
+                <ComboBox fx:id="roleCombo" promptText="Роль" prefWidth="140"
+                          style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+            </HBox>
+
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <Button text="Добавить" onAction="#onAdd"
+                        style="-fx-background-color: #FFD54F; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button text="Изменить" onAction="#onUpdate"
+                        style="-fx-background-color: #FFE082; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button text="Удалить" onAction="#onDelete"
+                        style="-fx-background-color: #FFCC80; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button text="Обновить список" onAction="#onRefresh"
+                        style="-fx-background-color: #FFF176; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+
+            <Label fx:id="errorLabel" style="-fx-text-fill: #C62828; -fx-font-weight: bold;" wrapText="true"/>
+        </VBox>
+    </bottom>
+</BorderPane>

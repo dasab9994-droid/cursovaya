@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.shop.controller.MainController"
+            style="-fx-background-color: #FFFDE7;">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10"
+              style="-fx-background-color: #FFE082; -fx-padding: 12 15; -fx-border-color: #FFD54F; -fx-border-width: 0 0 2 0;">
+            <Label fx:id="welcomeLabel" style="-fx-text-fill: #4E342E; -fx-font-size: 15px; -fx-font-weight: bold;">
+                <font>
+                    <Font size="15"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Выйти" onAction="#onLogout"
+                    style="-fx-background-color: #FFD54F; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-background-color: #FFFDE7; -fx-tab-min-height: 35; -fx-tab-max-height: 35;">
+            <style>
+                .tab-pane .tab-header-area {
+                -fx-background-color: #FFF8E1;
+                }
+                .tab-pane .tab-header-area .tab-header-background {
+                -fx-background-color: #FFF8E1;
+                }
+                .tab-pane .tab {
+                -fx-background-color: #FFFDE7;
+                -fx-border-color: #FFE082;
+                -fx-border-width: 1 1 0 1;
+                -fx-border-radius: 5 5 0 0;
+                -fx-background-radius: 5 5 0 0;
+                -fx-padding: 8 15;
+                }
+                .tab-pane .tab:selected {
+                -fx-background-color: #FFD54F;
+                -fx-border-color: #FFD54F;
+                -fx-border-width: 2 2 0 2;
+                }
+                .tab-pane .tab .tab-label {
+                -fx-text-fill: #4E342E;
+                -fx-font-weight: bold;
+                -fx-font-size: 13px;
+                }
+                .tab-pane .tab:selected .tab-label {
+                -fx-text-fill: #4E342E;
+                }
+                .tab-pane .tab-content-area {
+                -fx-background-color: #FFFDE7;
+                -fx-border-color: #FFE082;
+                -fx-border-width: 0 1 1 1;
+                -fx-border-radius: 0 0 5 5;
+                -fx-background-radius: 0 0 5 5;
+                }
+            </style>
+        </TabPane>
+    </center>
+</BorderPane>

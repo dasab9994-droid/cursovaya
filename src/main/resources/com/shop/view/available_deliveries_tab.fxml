@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.shop.controller.AvailableDeliveriesController"
+            style="-fx-background-color: #FFFDE7;">
+
+    <center>
+        <TableView fx:id="table" style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <columns>
+                <TableColumn fx:id="colProduct" text="Товар" prefWidth="220"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+                <TableColumn fx:id="colDelivery" text="Способ доставки" prefWidth="220"
+                             style="-fx-text-fill: #F57F17; -fx-font-weight: bold;"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="8" style="-fx-padding: 15; -fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-width: 2 0 0 0; -fx-background-radius: 0 0 10 10;">
+            <Label text="Разрешить определённый способ доставки для товара:"
+                   style="-fx-font-weight: bold; -fx-text-fill: #F57F17;">
+                <font>
+                    <Font size="14"/>
+                </font>
+            </Label>
+
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <ComboBox fx:id="productCombo" promptText="Товар" prefWidth="220"
+                          style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+                <ComboBox fx:id="deliveryCombo" promptText="Способ доставки" prefWidth="220"
+                          style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5;"/>
+            </HBox>
+
+            <HBox spacing="8" style="-fx-padding: 5 0;">
+                <Button text="Добавить" onAction="#onAdd"
+                        style="-fx-background-color: #FFD54F; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button text="Удалить выбранное" onAction="#onDelete"
+                        style="-fx-background-color: #FFE082; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                <Button text="Обновить список" onAction="#onRefresh"
+                        style="-fx-background-color: #FFF176; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 20; -fx-cursor: hand;"/>
+            </HBox>
+
+            <Label fx:id="errorLabel" style="-fx-text-fill: #C62828; -fx-font-weight: bold;" wrapText="true"/>
+        </VBox>
+    </bottom>
+</BorderPane>

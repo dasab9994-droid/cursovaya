@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="14" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.shop.controller.LoginController"
+      style="-fx-background-color: #FFFDE7; -fx-border-color: #FFE082; -fx-border-width: 2px; -fx-border-radius: 10; -fx-background-radius: 10;">
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="Вход в систему" style="-fx-text-fill: #F57F17; -fx-font-weight: bold;">
+        <font>
+            <Font size="20"/>
+        </font>
+    </Label>
+
+    <TextField fx:id="loginField" promptText="Логин"
+               style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10; -fx-pref-width: 250;"/>
+    <PasswordField fx:id="passwordField" promptText="Пароль"
+                   style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10; -fx-pref-width: 250;"/>
+
+    <Label fx:id="errorLabel" style="-fx-text-fill: #C62828; -fx-font-weight: bold;" wrapText="true"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Войти" onAction="#onLogin" defaultButton="true"
+                style="-fx-background-color: #FFD54F; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 25; -fx-cursor: hand;"/>
+        <Button text="Зарегистрироваться" onAction="#onShowRegister"
+                style="-fx-background-color: #FFE082; -fx-text-fill: #4E342E; -fx-font-weight: bold; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 8 25; -fx-cursor: hand;"/>
+    </HBox>
+</VBox>
