@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class AvailableDeliveriesController {
-
     @FXML private TableView<AvailableDelivery> table;
     @FXML private TableColumn<AvailableDelivery, String> colProduct;
     @FXML private TableColumn<AvailableDelivery, String> colDelivery;

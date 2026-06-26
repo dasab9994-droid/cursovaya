@@ -56,7 +56,7 @@ public class ProfileController {
             updated.setAddress(address);
             customerDAO.updateProfile(updated);
 
-            // обновляем данные в текущей сессии
+            
             user.setName(name);
             user.setPhone(phone);
             user.setContactPerson(contact);
